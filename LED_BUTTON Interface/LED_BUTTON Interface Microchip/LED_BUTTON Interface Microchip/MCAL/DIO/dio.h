@@ -5,9 +5,9 @@
 #include "../../Utilities/registers.h"
 
 #define Port_A 'A'
-#define Port_B 'A'
-#define Port_C 'A'
-#define Port_D 'A'
+#define Port_B 'B'
+#define Port_C 'C'
+#define Port_D 'D'
 
 
 void DIO_init(uint8_t pinNum, uint8_t portNum, EN_pin_direction direction);

@@ -51,4 +51,26 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="LED_BUTTON Interface Microchip\LED_BUTTON Interface Microchip\LED_BUTTON Interface Microchip.componentinfo.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="LED_BUTTON Interface Microchip\LED_BUTTON Interface Microchip\LED_BUTTON Interface Microchip.cproj" />
+    <None Include="LED_BUTTON Interface Microchip\LED_BUTTON Interface Microchip.atsln" />
+    <None Include="atmega32.pdf" />
+    <None Include="x64\Debug\LED_BUTTON Interface.exe.recipe" />
+    <None Include="x64\Debug\LED_BUTTON Interface.ilk" />
+    <None Include="x64\Debug\vc143.idb" />
+    <None Include="x64\Debug\vc143.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="x64\Debug\app.obj" />
+    <Object Include="x64\Debug\button.obj" />
+    <Object Include="x64\Debug\dio.obj" />
+    <Object Include="x64\Debug\led.obj" />
+    <Object Include="x64\Debug\main.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="x64\Debug\LED_BUTTON Interface.log" />
+  </ItemGroup>
 </Project>
