@@ -173,88 +173,85 @@ void DIO_read(uint8_t pinNum, uint8_t portNum, EN_pin_value* value)
 
 			else
 			{
-
+				// Error handling
+				break;
 			}
 
+		case Port_B:
+			if (((PINB_REG & (1 << pinNum)) >> pinNum))
+			{
+				*value = ON_value;
+				break;
+			}
 
+			else if (!((PINB_REG & (1 << pinNum)) >> pinNum))
+			{
+				*value = OFF_value;
+				break;
+			}
+
+			else
+			{
+				// Error handling
+				break;
+			}
+		case Port_C:
+			if (((PINC_REG & (1 << pinNum)) >> pinNum))
+			{
+				*value = ON_value;
+				break;
+			}
+
+			else if (!((PINC_REG & (1 << pinNum)) >> pinNum))
+			{
+				*value = OFF_value;
+				break;
+			}
+
+			else
+			{
+				// Error handling
+				break;
+			}
+		case Port_D:
+			if (((PIND_REG & (1 << pinNum)) >> pinNum))
+			{
+				*value = ON_value;
+				break;
+			}
+
+			else if (!((PIND_REG & (1 << pinNum)) >> pinNum))
+			{
+				*value = OFF_value;
+				break;
+			}
+
+			else
+			{
+				// Error handling
+				break;
+			}
 
 	}
 }
 
-
 void DIO_toggle(uint8_t pinNum, uint8_t portNum)
 {
 
+	EN_pin_value temp_value;
+	DIO_read(pinNum, portNum, &temp_value);
 
-	switch (portNum)
+	if (temp_value == OFF_value)
 	{
-	case Port_A:
-		if ( ((PINA_REG & (1 << pinNum)) >> pinNum) )
-		{
-			PORTA_REG &=~ (1 << pinNum);
-			break;
-		}
-		else if ( !((PINA_REG & (1 << pinNum)) >> pinNum) )
-		{
-			PORTA_REG |= (1 << pinNum);
-			break;
-		}
-		else
-		{
-			//Error handle
-			break;
-		}
-
-	case Port_B:
-		if (((PINB_REG & (1 << pinNum)) >> pinNum))
-		{
-			PORTB_REG &= ~(1 << pinNum);
-			break;
-		}
-		else if (!((PINB_REG & (1 << pinNum)) >> pinNum))
-		{
-			PORTB_REG |= (1 << pinNum);
-			break;
-		}
-		else
-		{
-			//Error handle
-			break;
-		}
-
-	case Port_C:
-		if (((PINC_REG & (1 << pinNum)) >> pinNum))
-		{
-			PORTC_REG &= ~(1 << pinNum);
-			break;
-		}
-		else if (!((PINC_REG & (1 << pinNum)) >> pinNum))
-		{
-			PORTC_REG |= (1 << pinNum);
-			break;
-		}
-		else
-		{
-			//Error handle
-			break;
-		}
-
-	case Port_D:
-		if (((PIND_REG & (1 << pinNum)) >> pinNum))
-		{
-			PORTD_REG &= ~(1 << pinNum);
-			break;
-		}
-		else if (!((PIND_REG & (1 << pinNum)) >> pinNum))
-		{
-			PORTD_REG |= (1 << pinNum);
-			break;
-		}
-		else
-		{
-			//Error handle
-			break;
-		}
-
+		DIO_write(pinNum, portNum, OFF_value);
 	}
+	else if (temp_value == ON_value)
+	{
+		DIO_write(pinNum, portNum, ON_value);
+	}
+	else
+	{
+		//Error handle
+	}
+
 }

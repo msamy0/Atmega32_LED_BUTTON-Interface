@@ -39,7 +39,9 @@
   <ItemGroup>
     <None Include="atmega32.pdf" />
     <None Include="LED_BUTTON Interface Microchip\LED_BUTTON Interface Microchip.atsln" />
+    <None Include="LED_BUTTON Interface Microchip\LED_BUTTON Interface Microchip\Debug\LED_BUTTON Interface Microchip.hex" />
     <None Include="LED_BUTTON Interface Microchip\LED_BUTTON Interface Microchip\LED_BUTTON Interface Microchip.cproj" />
+    <None Include="LED_BUTTON Interface Microchip\Simulation\Button LED interfacing atemga32.simu" />
     <None Include="x64\Debug\LED_BUTTON Interface.exe.recipe" />
     <None Include="x64\Debug\LED_BUTTON Interface.ilk" />
     <None Include="x64\Debug\vc143.idb" />
@@ -107,6 +109,12 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include;C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include;C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include-fixed</IncludePath>
+    <ExecutablePath>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include;C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include;C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include-fixed;$(ExecutablePath)</ExecutablePath>
+    <ExternalIncludePath>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include;C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <ReferencePath>C:\Program Files (x86)\atmel\ATmega_DFP\1.7.374\include\;C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\avr\include;C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include;C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avr8-gnu-toolchain\lib\gcc\avr\5.4.0\include-fixed;$(ReferencePath)</ReferencePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>

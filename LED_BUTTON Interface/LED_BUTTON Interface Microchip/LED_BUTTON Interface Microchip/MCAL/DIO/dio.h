@@ -9,10 +9,12 @@
 #define Port_C 'C'
 #define Port_D 'D'
 
-
 void DIO_init(uint8_t pinNum, uint8_t portNum, EN_pin_direction direction);
+
 void DIO_write(uint8_t pinNum, uint8_t portNum, EN_pin_value value);
+
 void DIO_toggle(uint8_t pinNum, uint8_t portNum);
+
 void DIO_read(uint8_t pinNum, uint8_t portNum,  EN_pin_value *value);
 
 
